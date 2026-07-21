@@ -4,8 +4,8 @@ import streamlit as st
 st.set_page_config(page_title="Mood Music", page_icon="🎵", layout="centered")
 
 # Título y descripción
-st.title("🎵 Recomendador Musical")
-st.write("Dime cómo te sientes hoy y te recomendaré la pista perfecta para este momento.")
+st.title("🎵 Recomendador Musical Múltiple")
+st.write("Dime cómo te sientes hoy y te daré varias opciones perfectas para este momento.")
 
 st.divider()
 
@@ -15,26 +15,62 @@ mood = st.selectbox(
     ["Elige una opción...", "Feliz ☀️", "Relajado ☕", "Con Energía ⚡", "Melancólico 🌧️"]
 )
 
-# Lógica de recomendaciones
+# Lógica de recomendaciones con múltiples opciones (Pestañas)
 if mood == "Feliz ☀️":
-    st.subheader("¡A disfrutar del día!")
-    st.write("**Canción recomendada:** *Walking on Sunshine* - Katrina & The Waves")
-    st.video("https://www.youtube.com/watch?v=iPUmE-tne5U")
+    st.subheader("¡A disfrutar del día! Aquí tienes tus opciones:")
+    tab1, tab2, tab3 = st.tabs(["Opción 1", "Opción 2", "Opción 3"])
+    
+    with tab1:
+        st.write("**Canción:** *Walking on Sunshine* - Katrina & The Waves")
+        st.video("https://www.youtube.com/watch?v=iPUmE-tne5U")
+    with tab2:
+        st.write("**Canción:** *Happy* - Pharrell Williams")
+        st.video("https://www.youtube.com/watch?v=ZbZSe6N_BXs")
+    with tab3:
+        st.write("**Canción:** *Don't Worry Be Happy* - Bobby McFerrin")
+        st.video("https://www.youtube.com/watch?v=d-diB65scQU")
 
 elif mood == "Relajado ☕":
-    st.subheader("Toma un respiro y relájate.")
-    st.write("**Canción recomendada:** *Weightless* - Marconi Union")
-    st.video("https://www.youtube.com/watch?v=UfcAVejslrU")
+    st.subheader("Toma un respiro y relájate con estas pistas:")
+    tab1, tab2, tab3 = st.tabs(["Opción 1", "Opción 2", "Opción 3"])
+    
+    with tab1:
+        st.write("**Canción:** *Weightless* - Marconi Union")
+        st.video("https://www.youtube.com/watch?v=UfcAVejslrU")
+    with tab2:
+        st.write("**Canción:** *Sunrise* - Norah Jones")
+        st.video("https://www.youtube.com/watch?v=fd02pGJx0s0")
+    with tab3:
+        st.write("**Canción:** *Banana Pancakes* - Jack Johnson")
+        st.video("https://www.youtube.com/watch?v=OkyrIRyrRdY")
 
 elif mood == "Con Energía ⚡":
-    st.subheader("¡A comerse el mundo!")
-    st.write("**Canción recomendada:** *Don't Stop Me Now* - Queen")
-    st.video("https://www.youtube.com/watch?v=HgzGwKwLmgM")
+    st.subheader("¡A comerse el mundo! Sube el volumen:")
+    tab1, tab2, tab3 = st.tabs(["Opción 1", "Opción 2", "Opción 3"])
+    
+    with tab1:
+        st.write("**Canción:** *Don't Stop Me Now* - Queen")
+        st.video("https://www.youtube.com/watch?v=HgzGwKwLmgM")
+    with tab2:
+        st.write("**Canción:** *Eye of the Tiger* - Survivor")
+        st.video("https://www.youtube.com/watch?v=btPJPFnesV4")
+    with tab3:
+        st.write("**Canción:** *Can't Stop* - Red Hot Chili Peppers")
+        st.video("https://www.youtube.com/watch?v=8DyziWtkfBw")
 
 elif mood == "Melancólico 🌧️":
-    st.subheader("Un abrazo musical para ti.")
-    st.write("**Canción recomendada:** *Someone Like You* - Adele")
-    st.video("https://www.youtube.com/watch?v=hLQl3WQQoQ0")
+    st.subheader("Un abrazo musical para ti. Escucha esto:")
+    tab1, tab2, tab3 = st.tabs(["Opción 1", "Opción 2", "Opción 3"])
+    
+    with tab1:
+        st.write("**Canción:** *Someone Like You* - Adele")
+        st.video("https://www.youtube.com/watch?v=hLQl3WQQoQ0")
+    with tab2:
+        st.write("**Canción:** *Fix You* - Coldplay")
+        st.video("https://www.youtube.com/watch?v=k4V3Mo61fJM")
+    with tab3:
+        st.write("**Canción:** *Let It Be* - The Beatles")
+        st.video("https://www.youtube.com/watch?v=QDYfEBY9NM4")
 
 else:
-    st.info("👆 Selecciona un estado de ánimo en el menú desplegable para ver tu recomendación.")
+    st.info("👆 Selecciona un estado de ánimo en el menú desplegable para ver tus recomendaciones.")
