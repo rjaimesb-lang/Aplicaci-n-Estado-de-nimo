@@ -9,13 +9,22 @@ st.write("Dime cómo te sientes hoy y te daré varias opciones perfectas para es
 
 st.divider()
 
-# Selector de estado de ánimo
+# Selector de estado de ánimo actualizado con más emociones
 mood = st.selectbox(
     "¿Cuál es tu estado de ánimo actual?",
-    ["Elige una opción...", "Feliz ☀️", "Relajado ☕", "Con Energía ⚡", "Melancólico 🌧️"]
+    [
+        "Elige una opción...", 
+        "Feliz ☀️", 
+        "Relajado ☕", 
+        "Con Energía ⚡", 
+        "Melancólico 🌧️",
+        "Enojado 😡",
+        "Enamorado 🥰",
+        "Concentrado 🧠"
+    ]
 )
 
-# Lógica de recomendaciones con múltiples opciones (Pestañas)
+# Lógica de recomendaciones con múltiples opciones
 if mood == "Feliz ☀️":
     st.subheader("¡A disfrutar del día! Aquí tienes tus opciones:")
     tab1, tab2, tab3 = st.tabs(["Opción 1", "Opción 2", "Opción 3"])
@@ -71,6 +80,48 @@ elif mood == "Melancólico 🌧️":
     with tab3:
         st.write("**Canción:** *Let It Be* - The Beatles")
         st.video("https://www.youtube.com/watch?v=QDYfEBY9NM4")
+
+elif mood == "Enojado 😡":
+    st.subheader("¡Saca toda esa frustración! Un poco de rock ayuda:")
+    tab1, tab2, tab3 = st.tabs(["Opción 1", "Opción 2", "Opción 3"])
+    
+    with tab1:
+        st.write("**Canción:** *Smells Like Teen Spirit* - Nirvana")
+        st.video("https://www.youtube.com/watch?v=hTWKbfoikeg")
+    with tab2:
+        st.write("**Canción:** *Killing In The Name* - Rage Against The Machine")
+        st.video("https://www.youtube.com/watch?v=bWXazVhlyxQ")
+    with tab3:
+        st.write("**Canción:** *Break Stuff* - Limp Bizkit")
+        st.video("https://www.youtube.com/watch?v=ZpUYjpKg9KY")
+
+elif mood == "Enamorado 🥰":
+    st.subheader("El amor está en el aire. Disfruta estas melodías románticas:")
+    tab1, tab2, tab3 = st.tabs(["Opción 1", "Opción 2", "Opción 3"])
+    
+    with tab1:
+        st.write("**Canción:** *Perfect* - Ed Sheeran")
+        st.video("https://www.youtube.com/watch?v=2Vv-BfVoq4g")
+    with tab2:
+        st.write("**Canción:** *All of Me* - John Legend")
+        st.video("https://www.youtube.com/watch?v=450p7goxZqg")
+    with tab3:
+        st.write("**Canción:** *Just The Way You Are* - Bruno Mars")
+        st.video("https://www.youtube.com/watch?v=LjhCEhWiKXk")
+
+elif mood == "Concentrado 🧠":
+    st.subheader("Modo enfoque activado. Ideal para estudiar o trabajar:")
+    tab1, tab2, tab3 = st.tabs(["Opción 1", "Opción 2", "Opción 3"])
+    
+    with tab1:
+        st.write("**Canción:** *Lofi Hip Hop Radio* - Lofi Girl")
+        st.video("https://www.youtube.com/watch?v=jfKfPfyJRdk")
+    with tab2:
+        st.write("**Canción:** *Experience* - Ludovico Einaudi")
+        st.video("https://www.youtube.com/watch?v=hN_q-_nGv4U")
+    with tab3:
+        st.write("**Canción:** *Clair de Lune* - Claude Debussy")
+        st.video("https://www.youtube.com/watch?v=WNcsUNKlAKw")
 
 else:
     st.info("👆 Selecciona un estado de ánimo en el menú desplegable para ver tus recomendaciones.")
