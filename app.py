@@ -3,13 +3,19 @@ import streamlit as st
 # Configuración de la página
 st.set_page_config(page_title="Mood Music", page_icon="🎵", layout="centered")
 
-# Inyección de CSS para el fondo rosado y textura
+# Inyección de CSS para el fondo rosado, textura y contraste de letra
 estilo_fondo = """
 <style>
+/* Fondo de la aplicación */
 .stApp {
-    background-color: #ffe6eb; /* Color de fondo rosado pastel */
-    background-image: radial-gradient(#ffb3c6 1.5px, transparent 1.5px); /* Textura de puntitos */
-    background-size: 25px 25px; /* Tamaño de la textura */
+    background-color: #ffe6eb; 
+    background-image: radial-gradient(#ffb3c6 1.5px, transparent 1.5px); 
+    background-size: 25px 25px; 
+}
+
+/* Forzar el color de la letra a oscuro para generar contraste */
+h1, h2, h3, p, label, .stMarkdown {
+    color: #2b2b2b !important;
 }
 </style>
 """
