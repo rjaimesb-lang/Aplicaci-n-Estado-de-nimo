@@ -3,13 +3,25 @@ import streamlit as st
 # Configuración de la página
 st.set_page_config(page_title="Mood Music", page_icon="🎵", layout="centered")
 
+# Inyección de CSS para el fondo rosado y textura
+estilo_fondo = """
+<style>
+.stApp {
+    background-color: #ffe6eb; /* Color de fondo rosado pastel */
+    background-image: radial-gradient(#ffb3c6 1.5px, transparent 1.5px); /* Textura de puntitos */
+    background-size: 25px 25px; /* Tamaño de la textura */
+}
+</style>
+"""
+st.markdown(estilo_fondo, unsafe_allow_html=True)
+
 # Título y descripción
 st.title("🎵 Recomendador Musical Múltiple")
 st.write("Dime cómo te sientes hoy y te daré varias opciones perfectas para este momento.")
 
 st.divider()
 
-# Selector de estado de ánimo actualizado con más emociones
+# Selector de estado de ánimo
 mood = st.selectbox(
     "¿Cuál es tu estado de ánimo actual?",
     [
